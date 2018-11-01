@@ -1,10 +1,10 @@
 'use strict';
-eslint-env jquery;
+/*eslint-env jquery*/
 
 function addItems() {
   $('#js-shopping-list-form').submit(function (event) {
     event.preventDefault();
-    const userText = $(event.currentTarget).find('.js-shopping-list-entry');
+    const userText = this.find('.js-shopping-list-entry');
     $('ul').append(`
         <li>
         <span class="shopping-item">${userText.val()}</span>
@@ -24,14 +24,14 @@ function addItems() {
 
 function checkAndUncheckItems (){
   $('ul').on('click', '.shopping-item-toggle', function(event){
-    $(event.currentTarget).parent().siblings('.shopping-item').toggleClass('shopping-item__checked');
+    this.parent().siblings('.shopping-item').toggleClass('shopping-item__checked');
   });
 }
 
 function deleteItems(){
   $('ul').on('click', '.shopping-item-delete', function(event) {
-    $(event.currentTarget).closest('li').remove();
-  })
+    this.closest('li').remove();
+  });
 }
 
 
