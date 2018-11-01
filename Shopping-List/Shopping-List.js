@@ -1,4 +1,5 @@
 'use strict';
+eslint-env jquery;
 
 function addItems() {
   $('#js-shopping-list-form').submit(function (event) {
@@ -23,8 +24,7 @@ function addItems() {
 
 function checkAndUncheckItems (){
   $('ul').on('click', '.shopping-item-toggle', function(event){
-    const itemText = $(event.currentTarget).parent().siblings('.shopping-item');
-    itemText.toggleClass('shopping-item__checked');
+    $(event.currentTarget).parent().siblings('.shopping-item').toggleClass('shopping-item__checked');
   });
 }
 
