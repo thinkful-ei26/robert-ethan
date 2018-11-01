@@ -4,8 +4,6 @@ function addItems() {
   $('#js-shopping-list-form').submit(function (event) {
     event.preventDefault();
     const userText = $(event.currentTarget).find('.js-shopping-list-entry');
-    console.log('this is working');
-        
     $('ul').append(`
         <li>
         <span class="shopping-item">${userText.val()}</span>
@@ -24,4 +22,23 @@ function addItems() {
   });
 }
 
+function checkAndUncheckItems (){
+  $('.shopping-item-toggle').click(function(event){
+    console.log('this worked');
+    const itemText = $(event.currentTarget).parent().prev();
+    console.log(itemText);
+    itemText.toggleClass('shopping-item__checked');
+  });
+}
+
+
+
+function deleteItems(){
+  $();
+}
+
+
+
 $(addItems);
+$(deleteItems);
+$(checkAndUncheckItems);
