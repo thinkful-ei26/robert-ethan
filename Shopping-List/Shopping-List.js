@@ -23,18 +23,16 @@ function addItems() {
 }
 
 function checkAndUncheckItems (){
-  $('.shopping-item-toggle').click(function(event){
-    console.log('this worked');
+  $('ul').on('click', '.shopping-item-toggle', function(event){
     const itemText = $(event.currentTarget).parent().prev();
-    console.log(itemText);
     itemText.toggleClass('shopping-item__checked');
   });
 }
 
-
-
 function deleteItems(){
-  $();
+  $('ul').on('click', '.shopping-item-delete', function(event) {
+    $(event.currentTarget).closest('li').remove();
+  })
 }
 
 
