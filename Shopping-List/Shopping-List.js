@@ -17,14 +17,13 @@ function addItems() {
             </div>
       </li>
         `);
-
     userText.val('');
   });
 }
 
 function checkAndUncheckItems (){
   $('ul').on('click', '.shopping-item-toggle', function(event){
-    const itemText = $(event.currentTarget).parent().prev();
+    const itemText = $(event.currentTarget).parent().siblings('.shopping-item');
     itemText.toggleClass('shopping-item__checked');
   });
 }
